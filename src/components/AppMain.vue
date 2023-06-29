@@ -4,12 +4,12 @@ export default {
 }
 </script>
 
-<template lang="">
-    <div>
-        Main
+<template>
+    <div class="container">
+        <div class="row"></div>
     </div>
 </template>
 
-<style lang="">
+<style lang="scss" scoped>
     
 </style>
