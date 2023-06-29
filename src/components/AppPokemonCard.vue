@@ -7,7 +7,7 @@ export default {
 </script>
 
 <template>
-    <div class="pokemon text-center">
+    <div class="pokemon text-center color-background-border">
         <img :src="myPokemon.imageUrl" class="img-fluid mb-3" :alt="myPokemon.info">
         <h4>{{ myPokemon.number }}</h4>
         <div>{{ myPokemon.name }}</div>
@@ -36,5 +36,10 @@ export default {
         height: 250px;
         width: 250px;
         border-radius: 50%;
+    }
+
+    .color-background-border{
+        background-color: yellow;
+        border-radius: 20px;
     }
 </style>

@@ -18,9 +18,9 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container color-background">
         <div class="row" v-if="store.loading === false">
-            <div v-for="(pokemon, index) in store.pokemonList" :key="index" class="col-6 col-lg-3">
+            <div v-for="(pokemon, index) in store.pokemonList" :key="index" class="col-6 col-lg-3 ">
                 <AppPokemonCard :myPokemon="pokemon"/>
             </div>
         </div>
@@ -29,5 +29,7 @@ export default {
 </template>
 
 <style lang="scss">
-    
+    .color-background{
+        background-color: rgb(75,81,86);
+    }
 </style>
