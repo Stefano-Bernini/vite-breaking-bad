@@ -17,18 +17,28 @@ export default {
           store,
       }
   },
-  mounted(){
-      axios.get(store.apiUrl).then((response) => {
+  mounted() {
+    this.getPokemon()
+  },
+  methods: {
+    getPokemon(){
+      let url = store.apiUrl
+      if (store.selectType !== '') {
+        url += `&eq[type1]=${store.selectType}`
+      }
+
+      axios.get(url).then((response) => {
           store.pokemonList = response.data.docs
           store.loading = false
       })
+    }
   }
 }
 </script>
 
 <template lang="">
   <div>
-    <AppHeader />
+    <AppHeader @typeChange="getPokemon" />
     <AppMain />
     <AppPokemonList />
   </div>

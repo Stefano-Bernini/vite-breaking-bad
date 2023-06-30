@@ -21,7 +21,7 @@ export default {
     <div class="container color-background">
         <div class="row" v-if="store.loading === false">
             <div v-for="(pokemon, index) in store.pokemonList" :key="index" class="col-6 col-lg-3 ">
-                <AppPokemonCard :myPokemon="pokemon"/>
+                <AppPokemonCard :item="pokemon"/>
             </div>
         </div>
         <AppLoader v-else/>

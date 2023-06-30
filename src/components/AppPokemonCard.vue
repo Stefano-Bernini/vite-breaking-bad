@@ -1,17 +1,28 @@
 <script>
 export default {
+    computed: {
+        pokemon() {
+            return {
+                type: this.item.type1,
+                catalogNumber: this.item.number,
+                details: this.item.info,
+                portrait: this.item.imageUrl,
+                name: this.item.name,
+            }
+        }
+    },
     props:{
-        myPokemon: Object
+        item: Object
     }
 }
 </script>
 
 <template>
     <div class="pokemon text-center color-background-border">
-        <img :src="myPokemon.imageUrl" class="img-fluid mb-3" :alt="myPokemon.info">
-        <h4>{{ myPokemon.number }}</h4>
-        <div>{{ myPokemon.name }}</div>
-        <div>{{ myPokemon.type1 }}</div>
+        <img :src="pokemon.portrait" class="img-fluid mb-3" :alt="pokemon.details">
+        <h4>{{ pokemon.catalogNumber }}</h4>
+        <div>{{ pokemon.name }}</div>
+        <div>{{ pokemon.type }}</div>
     </div>
 </template>
 
